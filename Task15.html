@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Play Fiber Router Plans</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            transition: background 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background: #1a1a2e;
+            color: white;
+        }
+        
+        /* Pricing Table */
+        .pricing-table {
+            text-align: center;
+            padding: 30px;
+        }
+        .card {
+            transition: transform 0.3s;
+             display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* FAQ Section */
+        .faq {
+            max-width: 600px;
+            margin: auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px;
+        }
+
+        /* Dark Mode Button */
+        .toggle-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Ensure all pricing cards are the same height */
+
+
+    </style>
+</head>
+<body>
+
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+   <div class="container mt-5">
+    <h2 class="text-center">Tata Play Fiber Router Plans</h2>
+    <div class="row pricing-table">
+        <div class="col-md-4">
+            <div class="card p-3">
+                <h3>Basic</h3>
+                <p>₹1000/month</p>
+                <p>✔ High-speed internet</p>
+                <p>✔ Unlimited data</p>
+                <button class="btn btn-primary">Select Plan</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3">
+                <h3>Standard</h3>
+                <p>₹1500/month</p>
+                <p>✔ High-speed internet</p>
+                <p>✔ Unlimited data</p>
+                <p>✔ Free router installation</p>
+                <button class="btn btn-primary">Select Plan</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3">
+                <h3>Premium</h3>
+                <p>₹2500/month</p>
+                <p>✔ Ultra-fast internet</p>
+                <p>✔ Unlimited data</p>
+                <p>✔ Free router installation</p>
+                <p>✔ Priority customer support</p>
+                <button class="btn btn-primary">Select Plan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <h2 class="text-center">FAQ</h2>
+    <div class="faq">
+        <div class="faq-item">
+            <h4>What is Tata Play Fiber?</h4>
+            <p class="faq-answer">Tata Play Fiber is a broadband internet service provided by Tata Play.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How do I get a new connection?</h4>
+            <p class="faq-answer">You can visit the Tata Play website or contact their customer care to get a new connection.</p>
+        </div>
+        <div class="faq-item">
+            <h4>What is included in the router plans?</h4>
+            <p class="faq-answer">The router plans include a Wi-Fi router and internet access.  Specific features vary by plan.</p>
+        </div>
+        <div class="faq-item">
+            <h4>What is the installation process like?</h4>
+            <p class="faq-answer">A technician will visit your premises to install the router and set up the connection. They will also guide you through the basic usage.</p>
+        </div>
+        <div class="faq-item">
+            <h4>What if I face any issues with my connection?</h4>
+            <p class="faq-answer">You can contact Tata Play customer support through phone, email, or their website. They will assist you in resolving any issues you may face.</p>
+        </div>
+    </div>
+</div>
+
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            const mode = document.body.classList.contains("dark-mode") ? "dark" : "light";
+            localStorage.setItem("theme", mode);
+        }
+
+        // Load Dark Mode from LocalStorage
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-mode");
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll(".faq-item").forEach(item => {
+            item.addEventListener("click", () => {
+                item.classList.toggle("active");
+                let answer = item.querySelector(".faq-answer");
+                answer.style.display = answer.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
+
+</body>
+</html>
